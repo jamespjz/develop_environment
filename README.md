@@ -39,3 +39,32 @@ docker rm xx // 删除容器
 
 docker rmi xx // 删除镜像
 ```
+
+# 安装go
+- 下载：
+```
+wget https://golang.google.cn/dl/go1.23.10.linux-amd64.tar.gz
+```
+- 删除系统自带旧版本
+```
+sudo rm -rf /usr/local/go
+```
+- 解压安装
+```
+sudo tar -C /usr/local -xzf go1.23.10.linux-amd64.tar.gz
+```
+- 配置环境变量
+```
+echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc
+echo 'export GOPATH=$HOME/go' >> ~/.bashrc
+echo 'export PATH=$PATH:$GOPATH/bin' >> ~/.bashrc
+source ~/.bashrc
+
+```
+- 验证安装
+```
+go version
+
+输出： go version go1.23.10 linux/amd64
+
+````
